@@ -39,8 +39,8 @@ img {
 
 @media (max-width: 600px) {
     table{
-        margin: 5% 0 0 0;
-        width: 100vw;
+        margin: 5% 0 10% 0;
+        width: 99vw;
         height: 100vw;
     }
     input{
