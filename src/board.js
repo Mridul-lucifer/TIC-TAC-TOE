@@ -2,7 +2,7 @@ import React from 'react'
 import './board.css'
 
 export default function Board() {
-    let name1="Zero Wala",name2="Cross Wala";
+    let name1="First Player(Zero)",name2="Second Player(Cross)";
     let arr = ['0','0','0','0','0','0','0','0','0']
     function checkWinner(board) {
         const winningCombinations = [
