@@ -39,8 +39,7 @@ img {
 
 @media (max-width: 600px) {
     table{
-        margin-top: 5%;
-        height: 85%;
+        margin: 5% 0 0 0;
         width: 100vw;
         height: 100vw;
     }
@@ -49,7 +48,7 @@ img {
         width: 40%;
     }
     img{
-        margin: 0 3vw;
+        margin: 1.5vw 1.5vw;
         width: 30vw;
         height: 30vw;
     }
