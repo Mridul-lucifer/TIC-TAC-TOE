@@ -11,11 +11,9 @@
 input{
     background-color: white;
     background-image: none;
-    /* opacity:0; */
     z-index: 99;
-    height: 5vh;
     margin: 1%;
-    /* font-size: xx-large; */
+    font-size: x-large;
 }
 *{
     margin: 0;
@@ -30,6 +28,8 @@ table{
     margin: auto;
     width: 500px;
     height: 500px;
+    margin-top: 2%;
+    margin-bottom: 10%;
 }
 img {
     height: 133px;
