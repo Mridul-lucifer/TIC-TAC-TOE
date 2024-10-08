@@ -39,14 +39,21 @@ img {
 
 @media (max-width: 600px) {
     table{
+        margin-top: 5%;
         height: 85%;
-        width: 85%;
-        height: 500px;
+        width: 100vh;
+        height: 110vh;
+    }
+    input{
+        font-size: larger;
+        width: 40%;
     }
     img{
-        margin: 0 1vh;
+        margin: 0 3vh;
+        width: 30vh;
+        height: 30vh;
     }
     h1{
         margin : 15% 0 0 0;
     }
-  }
+  } 
