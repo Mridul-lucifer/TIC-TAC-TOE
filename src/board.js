@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './board.css'
 
 export default function Board() {
+    let [mark1,setMark1] = useState(0);
+    let [mark2,setMark2] = useState(0);
     let name1="First Player(Zero)",name2="Second Player(Cross)";
     let arr = ['0','0','0','0','0','0','0','0','0']
     function checkWinner(board) {
@@ -27,6 +29,14 @@ export default function Board() {
         }
         return 'ok';
     }
+    const resetGame = () => {
+        arr = ['0', '0', '0', '0', '0', '0', '0', '0', '0'];
+        player1 = true;
+        for(let i = 0 ; i < 9 ; i++){
+            document.getElementById(i).src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/pics/bg.jpg";
+        }
+
+    };
     let player1 = true;
     var handleClick = function(id){
         var int_id = id-'0';
@@ -48,17 +58,19 @@ export default function Board() {
         if(value==='Draw'){
             setTimeout(() => {
                 alert('Draw');
-                window.location.reload();
+                resetGame();
             }, 700)
         }else if(value ==='O'){
             setTimeout(() => {
                 alert(name1+' wins')
-                window.location.reload();
+                setMark1(mark1+1);
+                resetGame();
             }, 700)
         }else if(value ==='X'){
             setTimeout(() => {
                 alert(name2+' wins')
-                window.location.reload();
+                setMark2(mark2+1);
+                resetGame();
             }, 700)
         }
     }
@@ -72,10 +84,13 @@ export default function Board() {
                 <input onChange={(event)=>{
                     name1 = event.target.value;
                 }}placeholder ="First Player"></input>
+                <span>{mark1}</span>
                 <input onChange={(event)=>{
                     name2 = event.target.value;
                 }} placeholder='Second Player'></input>
+                <span>{mark2}</span>
             </form>
+
         </div>
         <table border='1'>
             <tr>

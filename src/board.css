@@ -39,6 +39,10 @@ img {
     width: 133px;
     margin-left: 15px ;
 }
+span{
+    color: white;
+    font-size: xx-large;
+}
 
 @media (max-width: 600px) {
     table{
