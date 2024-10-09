@@ -44,7 +44,7 @@ export default function Board() {
     const swipe = function(){
         if(player1){
             setplayer1(false);
-            setTurn(name2);
+            setTurn(name1);
         }else{
             setplayer1(true);
             setTurn(name2);
