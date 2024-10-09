@@ -6,7 +6,9 @@ export default function Board() {
     let [mark2,setMark2] = useState(0);
     let [name1,setName1] = useState("First Player(Zero)");
     let [name2,setName2] = useState("Second Player(Cross)");
-    let arr = ['0','0','0','0','0','0','0','0','0']
+    let [turn,setTurn] = useState(name1);
+    let [player1,setplayer1] = useState(true);
+    let [arr,setarr] = useState(['0','0','0','0','0','0','0','0','0'])
     function checkWinner(board) {
         const winningCombinations = [
             [0, 1, 2], // Row 1
@@ -31,24 +33,39 @@ export default function Board() {
         return 'ok';
     }
     const resetGame = () => {
-        arr = ['0', '0', '0', '0', '0', '0', '0', '0', '0'];
-        player1 = true;
+        setarr(['0', '0', '0', '0', '0', '0', '0', '0', '0'])
+        setplayer1(true);
+        setTurn(name1);
         for(let i = 0 ; i < 9 ; i++){
             document.getElementById(i).src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/pics/bg.jpg";
         }
 
     };
-    let player1 = true;
+    const swipe = function(){
+        if(player1){
+            setplayer1(false);
+            setTurn(name2);
+        }else{
+            setplayer1(true);
+            setTurn(name2);
+        }
+    }
+    const reload = function(){
+        window.location.reload();
+    }
+    // let player1 = true;
     var handleClick = function(id){
         var int_id = id-'0';
         const a = document.getElementById(id);
         if(player1 === true && arr[int_id]==='0'){
-            player1 = false;
+            setplayer1(false);
+            setTurn(name2);
             arr[int_id] = 'O';
             a.src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/pics/O_symbol.png";
             a.alt = "O"
         }else if(arr[int_id]==='0'){
-            player1 = true;
+            setplayer1(true);
+            setTurn(name1);
             arr[int_id] = 'X';
             a.src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/X_Symbol.png";
             a.alt = "X"
@@ -66,13 +83,13 @@ export default function Board() {
                 alert(name1+' wins')
                 setMark1(mark1+1);
                 resetGame();
-            }, 700)
+            }, 500)
         }else if(value ==='X'){
             setTimeout(() => {
                 alert(name2+' wins')
                 setMark2(mark2+1);
                 resetGame();
-            }, 700)
+            }, 500)
         }
     }
 
@@ -93,7 +110,8 @@ export default function Board() {
             </form>
 
         </div>
-        <table border='1'>
+        <h2>{turn}</h2>
+        <table border='1' className='board-table'>
             <tr>
                 <td onClick={()=>{handleClick('0')}} className="outerCont">
                     <img id='0' alt=""></img>
@@ -128,7 +146,21 @@ export default function Board() {
                 </td>
             </tr>
             
+            
         </table>
+        <div className="table1" >
+        <tr>
+                <td>
+                <button onClick={swipe}>SWIPE</button>
+                </td>
+                <td>
+                <button onClick={resetGame}>RESET</button>
+                </td>
+                <td>
+                <button onClick={reload}>REFRESH</button>
+                </td>
+            </tr>
+        </div>
       </div>
     </div>
   )

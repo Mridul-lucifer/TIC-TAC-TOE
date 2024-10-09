@@ -27,12 +27,16 @@ h1{
     color: beige;
     font-weight: 900;
 }
+h2{
+    text-align: center;
+    color: white;
+}
 table{
     margin: auto;
     width: 500px;
     height: 500px;
     margin-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
 }
 img {
     height: 133px;
@@ -43,10 +47,23 @@ span{
     color: white;
     font-size: xx-large;
 }
+.buttons{
+    display: flex;
+    justify-content: space-around;
 
+}
+button{
+    font-size: x-large;
+    color: white;
+    padding: 5px;
+}
+.table1{
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 600px) {
     table{
-        margin: 5% 0 10% 0;
+        margin: 2% 0 0 0;
         width: 99vw;
         height: 100vw;
     }
