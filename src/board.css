@@ -4,6 +4,9 @@
     background-position: center; /* Optional: Centers the image */
     background-repeat: no-repeat; /* Optional: Prevents image from repeating*/
 } 
+.board{
+    height: 100vh;
+}
 .form{
     text-align: center;
     margin-top: 2%;
