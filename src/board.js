@@ -4,7 +4,8 @@ import './board.css'
 export default function Board() {
     let [mark1,setMark1] = useState(0);
     let [mark2,setMark2] = useState(0);
-    let name1="First Player(Zero)",name2="Second Player(Cross)";
+    let [name1,setName1] = useState("First Player(Zero)");
+    let [name2,setName2] = useState("Second Player(Cross)");
     let arr = ['0','0','0','0','0','0','0','0','0']
     function checkWinner(board) {
         const winningCombinations = [
@@ -82,11 +83,11 @@ export default function Board() {
         <div className='form'>
             <form >
                 <input onChange={(event)=>{
-                    name1 = event.target.value;
+                    setName1(event.target.value);
                 }}placeholder ="First Player"></input>
                 <span>{mark1}</span>
                 <input onChange={(event)=>{
-                    name2 = event.target.value;
+                    setName2(event.target.value);
                 }} placeholder='Second Player'></input>
                 <span>{mark2}</span>
             </form>
