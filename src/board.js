@@ -44,10 +44,10 @@ export default function Board() {
     const swipe = function(){
         if(player1){
             setplayer1(false);
-            setTurn(name1);
+            setTurn(name2);
         }else{
             setplayer1(true);
-            setTurn(name2);
+            setTurn(name1);
         }
     }
     const reload = function(){
