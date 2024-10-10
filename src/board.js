@@ -38,6 +38,7 @@ export default function Board() {
         setTurn(name1);
         for(let i = 0 ; i < 9 ; i++){
             document.getElementById(i).src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/pics/bg.jpg";
+            document.getElementById(i).style.border = "solid 1px white"
         }
 
     };
