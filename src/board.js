@@ -40,7 +40,8 @@ export default function Board() {
             document.getElementById(i).src = "https://raw.githubusercontent.com/Mridul-lucifer/TIC-TAC-TOE/refs/heads/main/src/pics/bg.jpg";
             document.getElementById(i).style.border = "solid 1px white"
         }
-
+        document.getElementById("Swipe").disabled = false;
+        document.getElementById("Swipe").style.opacity = 1;
     };
     const swipe = function(){
         if(player1){
@@ -57,6 +58,8 @@ export default function Board() {
     // let player1 = true;
     var handleClick = function(id){
         var int_id = id-'0';
+        document.getElementById("Swipe").disabled = true;
+        document.getElementById("Swipe").style.opacity = 0.5;
         const a = document.getElementById(id);
         if(player1 === true && arr[int_id]==='0'){
             setplayer1(false);
@@ -102,6 +105,7 @@ export default function Board() {
             <form >
                 <input onChange={(event)=>{
                     setName1(event.target.value);
+                    setTurn(event.target.value);
                 }}placeholder ="First Player"></input>
                 <span>{mark1}</span>
                 <input onChange={(event)=>{
@@ -111,7 +115,7 @@ export default function Board() {
             </form>
 
         </div>
-        <h2>{turn}</h2>
+        <h2>TURN : {turn}</h2>
         <table border='1' className='board-table'>
             <tr>
                 <td onClick={()=>{handleClick('0')}} className="outerCont">
@@ -152,7 +156,7 @@ export default function Board() {
         <div className="table1" >
         <tr>
                 <td>
-                <button onClick={swipe}>SWIPE</button>
+                <button id="Swipe" onClick={swipe}>SWIPE</button>
                 </td>
                 <td>
                 <button onClick={resetGame}>RESET</button>
